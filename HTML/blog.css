@@ -1,0 +1,44 @@
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#main-header
+{
+    text-align: center;
+    background-color: blue;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.nav-home
+{
+    background-color: rgb(31, 31, 43);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-home-link
+{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-home-link:hover
+{
+    color: blue;
+}
+
+.main-footer
+{
+    text-align: center;
+    font-size: 18px;
+}
+
+section, aside
+{
+    padding: 20px;
+    height: 100%;
+}

@@ -1,0 +1,16 @@
+li
+{
+    list-style-type: lower-alpha;
+    -webkit-padding-start: 40px;
+    padding-inline-start: 0%;
+}
+
+ul
+{
+    padding-inline-start: 30px;
+
+}
+textarea
+{
+    
+}
