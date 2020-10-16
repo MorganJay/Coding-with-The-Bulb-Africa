@@ -1,0 +1,1 @@
+//reset, lap, resume, stop classes for button
