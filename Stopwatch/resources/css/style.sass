@@ -1,24 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
-html, body {
+body {
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  gap: 1em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Geneva, Tahoma,
     sans-serif, "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
     Geneva, Verdana, sans-serif;
-  user-select: none;
-  height: 600px;
-  overflow: hidden;
+  height: 100vh;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(10px, auto);
-  /* gap: 1rem; */
-  margin: auto;
+main {
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 1em auto;
+  overflow-y: auto;
+  max-height: 300px;
+  color: grey;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* main::-webkit-scrollbar{
+  width: 10px;
+} */
+
+main::-webkit-scrollbar-track{
+  background: white;
+}
+
+main::-webkit-scrollbar-thumb{
+  background: #888;
+}
+
+main::-webkit-scrollbar-thumb:hover{
+  background: #555;
+}
+
+.lap--heading, .laps{
+  display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.underline
+{
+  padding-bottom: 0.5em;
+  border-bottom: 1.5px solid gainsboro;
 }
 
 .time--display{
@@ -26,58 +63,20 @@ html, body {
   font-size: 5rem;
   text-align: center;
   margin-bottom: 1rem;
-  padding-top: 5rem;
 }
 
-.laptimer{
-  margin: 0 auto;
-  color: grey;
-  font-size: xx-large;
-  align-self: center;
-}
-
-main {
-  text-align: center;
+/* .lap--results {
+  padding: 1rem;
   width: 70%;
-  margin: 1em auto;
-  overflow-y: auto;
-  height: 200px;
-  color: grey;
-  padding: 10px;
-} 
-
-main::-webkit-scrollbar{
-  width: 10px;
-}
-
-main::-webkit-scrollbar-track{
-  background: white;
-}
-
-main::-webkit-scrollbar-thumb{
-  background:#a5a5a5;
-}
-
-main::-webkit-scrollbar-thumb:hover{
-  background: #555;
-}
-
-.lap--heading{
-  display: inline-flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.laps-table{
   margin: auto;
-  width: 90%;
-  color: rgb(165, 165, 165);
-  border-collapse: collapse;
-}
+ 
+} */
 
-th{
-  text-align: center;
-  border-bottom: 1px solid #555;
+.lap--results p {
+  border: 1px solid red;
+  padding: 1rem;
+  font-size: large;
+  
 }
 
 span.ripple {
@@ -113,15 +112,13 @@ button {
 }
 
 footer {
-  width: 80%;
-  margin: 1em auto;
+  width: 90%;
+  margin: auto;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(3, auto);
   grid-auto-rows: 1fr;
   gap: 1em;
-  padding-top: 5px;
-  position: static;
 }
 
 .start {
@@ -213,19 +210,8 @@ footer {
     }
   }
 
-  main{
-    width: 90%;
-  }
-  .laps-table{
-    width: 75%;
-  }
-
-  /* tbody tr td:first-of-type{
-    
-  } */
-
   footer{
     gap: 0.5em;
-    margin: 1em auto;
+    margin: 1em;
   }
 }

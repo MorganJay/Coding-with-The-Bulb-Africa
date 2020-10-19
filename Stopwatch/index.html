@@ -10,22 +10,42 @@
 </head>
 
 <body>
-    <header class="time">
-        00:00.00
-    </header>
-    <main class="lap__results">
-    </main>
+    <div class="container">
+        <div class="time--display">
+            <span class="hours button--hide">00:</span>00:00.00
+        </div>
+        <div class="laptimer"></div>
+        <main>
+            <table class="laps-table button--hide">
+               <thead>
+                   <tr>
+                       <th>Lap</th>
+                        <th>Lap time</th>
+                        <th>Overall time</th>
+                   </tr>
+               </thead>
+               <tbody>
+               </tbody>
+            </table>
+        </main>
+    </div>
+
+
+
+
+
+
+
     <footer>
-        <button class="start">Start</button>
-        <button class="stop">Stop</button>
-        <button class="lap">Lap</button>
-        <button class="resume">Resume</button>
-        <button class="reset">Reset</button>
+        <div class="start"><button class="button--start">Start</button></div>
+        <div class="stop"><button class="button--stop button--hide">Stop</button></div>
+        <div class="lap"><button class="button--lap button--hide">Lap</button></div>
+        <div class="resume"><button class="button--resume button--hide">Resume</button></div>
+        <div class="reset"><button class="button--reset button--hide">Reset</button></div>
     </footer>
 
-
-<script src="resources/js/ripple.js"></script>
-<script src="resources/js/stopwatch.js"></script>
+    <script src="resources/js/ripple.js"></script>
+    <script src="resources/js/stopwatch.js"></script>
 </body>
 
 </html>
