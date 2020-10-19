@@ -168,7 +168,6 @@ function lapPrint() {
     <td>${display.textContent}</td>
     <td>${display.textContent}</td>`;
     lapTableBody.appendChild(lap);
-    console.log(lap + "first lap");
   } 
   else {
     if (lapnumber < 10) {
@@ -178,7 +177,6 @@ function lapPrint() {
                    <td>${lapTimerDisplay.textContent}</td>
                    <td>${display.textContent}</td>`;
     lapTableBody.appendChild(lap);
-    console.log(lap + "laptimer laps");
   }
 }
 
@@ -211,7 +209,9 @@ function stopTimer() {
   clearInterval(start);
   clearInterval(lapstart);
   displayTimer();
-  displayLapTimer();
+  if (lapnumber >= 1) {
+    displayLapTimer();
+  }
 }
 
 function resetTimer() {
@@ -242,7 +242,9 @@ function resumeTimer() {
   resetBtn.classList.add("button--hide");
   lapBtn.classList.remove("button--hide", "moveRight");
   start = setInterval(timeCount, 10);
-  lapstart = setInterval(laptimeCount, 10);
+  if (lapnumber != 0) {
+    lapstart = setInterval(laptimeCount, 10);
+  }
 }
 
 function startbuttonHide() {
