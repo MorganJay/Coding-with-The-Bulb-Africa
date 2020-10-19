@@ -226,7 +226,7 @@ function resetTimer() {
   clearInterval(start);
   clearInterval(lapstart);
   lapstart = 0;
-  lapTableBody.querySelectorAll("tr").forEach((tr) => tr.remove());
+  lapTableRow.forEach((tr) => tr.remove());
   startBtn.classList.remove("button--hide");
   resetBtn.classList.add("button--hide");
   resumeBtn.classList.add("button--hide");
@@ -242,6 +242,7 @@ function resumeTimer() {
   resetBtn.classList.add("button--hide");
   lapBtn.classList.remove("button--hide", "moveRight");
   start = setInterval(timeCount, 10);
+  lapstart = setInterval(laptimeCount, 10);
 }
 
 function startbuttonHide() {
