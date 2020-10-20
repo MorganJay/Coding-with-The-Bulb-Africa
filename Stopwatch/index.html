@@ -7,10 +7,14 @@
     <link rel="shortcut icon" href="resources/images/176264-200.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
     <title>Stopwatch</title>
 </head>
 
 <body>
+    <button class="btn btn-action mt-5 mr-5" type="button" aria-label="Toggle dark mode">
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+    </button>
     <div class="container">
         <div class="time--display">
             <span class="hours button--hide">00:</span>00:00.00
@@ -29,15 +33,17 @@
                 </tbody>
             </table>
         </main>
-    </div>
-    <footer>
+        <footer>
         <div class="start"><button class="button--start">Start</button></div>
         <div class="stop"><button class="button--stop button--hide">Stop</button></div>
         <div class="lap"><button class="button--lap button--hide">Lap</button></div>
         <div class="resume"><button class="button--resume button--hide">Resume</button></div>
         <div class="reset"><button class="button--reset button--hide">Reset</button></div>
-        <div class="copyright">With love from <a href="https://github.com/MorganJay/Coding-with-The-Bulb-Africa/tree/master/Stopwatch" target="_blank">Morgan Jay</a> 💘</div>
+        <div class="copyright">With love from <a
+                href="https://github.com/MorganJay/Coding-with-The-Bulb-Africa/tree/master/Stopwatch"
+                target="_blank">Morgan Jay</a> 💘</div>
     </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
     <script src="resources/js/ripple.js"></script>

@@ -30,6 +30,11 @@ const resumeBtn = document.querySelector(".button--resume");
 const resetBtn = document.querySelector(".button--reset");
 const lapBtn = document.querySelector(".button--lap");
 const stopBtn = document.querySelector(".button--stop");
+const btn = document.querySelector(".btn");
+
+function toggleDarkMode() {
+    halfmoon.toggleDarkMode();
+}
 
 //Normal time functions
 function displayTimer() {
@@ -147,6 +152,7 @@ function lapPrint() {
     lap.innerHTML = `<td>${lapnumber}</td>
                    <td>${lapTimerDisplay.textContent}</td>
                    <td>${display.textContent}</td>`;
+    Array.from(lapTableBody);
     lapTableBody.appendChild(lap);
   }
 }
@@ -233,6 +239,7 @@ function stopbuttonSwitch() {
   resetBtn.classList.remove("button--hide");
 }
 
+btn.addEventListener("click", toggleDarkMode);
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
 lapBtn.addEventListener("click", lapTimer);
