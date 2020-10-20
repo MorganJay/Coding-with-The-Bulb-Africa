@@ -152,8 +152,7 @@ function lapPrint() {
     lap.innerHTML = `<td>${lapnumber}</td>
                    <td>${lapTimerDisplay.textContent}</td>
                    <td>${display.textContent}</td>`;
-    Array.from(lapTableBody);
-    lapTableBody.appendChild(lap);
+    lapTableBody.prepend(lap);
   }
 }
 
