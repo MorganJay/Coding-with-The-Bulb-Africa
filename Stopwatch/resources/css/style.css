@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Geneva, Tahoma,
@@ -10,32 +11,32 @@ html, body {
     Geneva, Verdana, sans-serif;
   user-select: none;
   overflow: hidden;
-  /* display: grid;
-  place-items: center; */
+  display: grid;
+  place-items: center;
   height: 100%;
 }
 
-.btn{
+.btn {
   position: fixed;
   right: 0;
 }
 
-.container{
-  margin-top: 5em;
+.container {
+  /* margin-top: 5em; */
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: auto auto 250px 1fr;
+  grid-template-rows: auto auto 250px 3fr;
   width: 100%;
   place-items: center;
 }
 
-.time--display{
+.time--display {
   font-size: 64px;
   text-align: center;
   /* margin-bottom: 1rem; */
 }
 
-.laptimer{
+.laptimer {
   margin: 0 auto;
   color: grey;
   font-size: large;
@@ -50,38 +51,38 @@ main {
   max-height: 250px;
   color: grey;
   align-self: flex-start;
-} 
+}
 
-main::-webkit-scrollbar{
+main::-webkit-scrollbar {
   width: 10px;
 }
 
-main::-webkit-scrollbar-track{
+main::-webkit-scrollbar-track {
   background: white;
 }
 
-main::-webkit-scrollbar-thumb{
-  background:#a5a5a5;
+main::-webkit-scrollbar-thumb {
+  background: #a5a5a5;
 }
 
-main::-webkit-scrollbar-thumb:hover{
+main::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-.lap--heading{
+.lap--heading {
   display: inline-flex;
   justify-content: space-around;
   width: 100%;
 }
 
-.laps-table{
+.laps-table {
   margin: auto;
   width: 90%;
   color: rgb(165, 165, 165);
   border-collapse: collapse;
 }
 
-th{
+th {
   text-align: center;
   border-bottom: 1px solid #555;
 }
@@ -125,13 +126,13 @@ footer {
   align-self: flex-end;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr .8fr;
+  grid-template-rows: 1fr 0.8fr;
   gap: 1em;
   padding-top: 5px;
   position: static;
 }
 
-.copyright{
+.copyright {
   grid-column: 1/4;
   font-size: 14px;
   grid-row: 2/4;
@@ -208,7 +209,7 @@ footer {
   }
 }
 
-@media(max-width: 600px){
+@media (max-width: 600px) {
   @keyframes movetoLeft {
     from {
       transform: translateX(60px);
@@ -227,40 +228,76 @@ footer {
     }
   }
 
-  main{
+  main {
     width: 90%;
   }
 
-  tbody tr td:first-of-type{
-    padding: .5em;
+  tbody tr td:first-of-type {
+    padding: 0.5em;
   }
 
-  footer{
+  footer {
     gap: 0.5em;
     width: 80%;
   }
 }
 
-@media(min-width: 1500px) { 
-  .time--display{
+@media (min-width: 1500px) {
+  .time--display {
     font-size: 100px;
   }
 
-  main{
+  main {
     width: 70%;
     max-height: 700px;
   }
 
-  footer{
+  footer {
     width: 50%;
   }
 
-  button{
+  button {
     font-size: 70px;
     padding: 2rem 4rem;
   }
 
-  .copyright{
+  .copyright {
     font-size: 20px;
+  }
+}
+
+@media (min-height: 721px) {
+  main {
+    max-height: 400px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr auto 2.3fr 1fr;
+    grid-template-areas:
+      "timer"
+      "laptimer"
+      "laptable"
+      "buttons"
+      "copyright";
+    place-items: center;
+  }
+
+  footer {
+    margin: 4em auto 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.3fr;
+    gap: 30px 0px;
+    grid-template-areas:
+      "buttons"
+      "copyright";
+  }
+
+  .copyright {
+    font-size: 14px;
+    align-self: end;
+    grid-area: "copyright";
   }
 }

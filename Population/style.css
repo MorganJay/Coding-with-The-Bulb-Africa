@@ -1,0 +1,30 @@
+.percent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    width: 2000px;
+    background-color: yellow;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.population{
+    margin: 10px;
+}
+
+.country{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    margin: 10px;
+    align-items: center;
+}
+
+span{
+    /* margin: auto 10px; */
+}
