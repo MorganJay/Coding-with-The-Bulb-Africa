@@ -24,7 +24,6 @@ const dhours = document.querySelector(".hours");
 const display = document.querySelector(".time--display");
 const lapTable = document.querySelector(".laps-table");
 const lapTableBody = document.querySelector("tbody");
-const lapTableRow = lapTableBody.querySelectorAll("tr");
 const lapTimerDisplay = document.querySelector(".laptimer");
 const startBtn = document.querySelector(".button--start");
 const resumeBtn = document.querySelector(".button--resume");
@@ -92,33 +91,6 @@ function timeCount() {
 
 //Lap timer functions
 function displayLapTimer() {
-  //   if (lapnumber >= 1) {
-  // switch function isn't working
-  // switch (lmilliseconds) {
-  //   case lmilliseconds < 10:
-  //     lapmilliseconds = `0${lmilliseconds.toString()}`;
-  //     console.log(lapmilliseconds);
-  //     break;
-  //   default:
-  //     lapmilliseconds = `${lmilliseconds.toString()}`;
-  //     break;
-  // }
-  // switch (lseconds) {
-  //   case lseconds < 10:
-  //     lapseconds = `0${lseconds.toString()}`;
-  //     break;
-  //   default:
-  //     lapseconds = `${lseconds.toString()}`;
-  //     break;
-  // }
-  // switch (lminutes) {
-  //   case lminutes < 10:
-  //     lapminutes = `0${lminutes.toString()}`;
-  //     break;
-  //   default:
-  //     lapminutes = `${lminutes.toString()}`;
-  //     break;
-  // }
   if (lmilliseconds < 10) {
     lapmilliseconds = `0${lmilliseconds.toString()}`;
   } else {
@@ -159,7 +131,6 @@ function laptimeCount() {
 }
 
 function lapPrint() {
-  //   lapTimerDisplay.innerHTML = `${lapminutes}:${lapseconds}.${lapmilliseconds}`;
   lapnumber++;
   const lap = document.createElement("tr");
   if (lapnumber === 1) {
@@ -226,7 +197,7 @@ function resetTimer() {
   clearInterval(start);
   clearInterval(lapstart);
   lapstart = 0;
-  lapTableRow.forEach((tr) => tr.remove());
+  lapTableBody.querySelectorAll("tr").forEach((tr) => tr.remove())
   startBtn.classList.remove("button--hide");
   resetBtn.classList.add("button--hide");
   resumeBtn.classList.add("button--hide");
@@ -267,3 +238,31 @@ stopBtn.addEventListener("click", stopTimer);
 lapBtn.addEventListener("click", lapTimer);
 resumeBtn.addEventListener("click", resumeTimer);
 resetBtn.addEventListener("click", resetTimer);
+
+//   if (lapnumber >= 1) {
+  // switch function isn't working
+  // switch (lmilliseconds) {
+  //   case lmilliseconds < 10:
+  //     lapmilliseconds = `0${lmilliseconds.toString()}`;
+  //     console.log(lapmilliseconds);
+  //     break;
+  //   default:
+  //     lapmilliseconds = `${lmilliseconds.toString()}`;
+  //     break;
+  // }
+  // switch (lseconds) {
+  //   case lseconds < 10:
+  //     lapseconds = `0${lseconds.toString()}`;
+  //     break;
+  //   default:
+  //     lapseconds = `${lseconds.toString()}`;
+  //     break;
+  // }
+  // switch (lminutes) {
+  //   case lminutes < 10:
+  //     lapminutes = `0${lminutes.toString()}`;
+  //     break;
+  //   default:
+  //     lapminutes = `${lminutes.toString()}`;
+  //     break;
+  // }
