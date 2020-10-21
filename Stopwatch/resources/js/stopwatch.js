@@ -154,7 +154,10 @@ function lapPrint() {
                    <td>${display.textContent}</td>`;
     lapTableBody.prepend(lap);
   }
+
+   
 }
+
 
 function lapTimer() {
   if (lapstart === 0) {
