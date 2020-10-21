@@ -126,6 +126,7 @@ section {
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  grid-row: 7;
 }
 
 .copyright {
@@ -232,7 +233,7 @@ section {
 
   section {
     gap: 0.5em;
-    width: 80%;
+    width: 70%;
   }
 }
 
@@ -268,21 +269,14 @@ section {
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr auto 2.3fr 0.7fr;
-    grid-template-areas:
-      "timer"
-      "laptimer"
-      "laptable"
-      "buttons"
-      "copyright";
+    grid-template-rows: 0.5fr auto 4fr 0.1fr;
     place-items: center;
   }
 
-  footer {
+  section {
     margin: 2em auto 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(1fr);
   }
 
   .copyright {
