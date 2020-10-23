@@ -106,15 +106,10 @@ tbody tr td:first-of-type {
 
 tr.max > td:first-child::before {
   content: "🠉";
-  position: fixed;
-  left: 39px;
-  
 }
 
 tr.min > td:first-child::before {
   content: "🠋";
-  position: fixed;
-  left: 39px;
 }
 
 span.ripple {
