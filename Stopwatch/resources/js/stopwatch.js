@@ -174,7 +174,7 @@ const GetLapComparison = {
     // console.log(lap_times);
     return laptimes[Math.max(...laps)];
   },
-  getOverallMinimumTime: ()=> {
+  getOverallMinimumTime: () => {
     let overallLaps = new Array();
     const olap_times = {};
     lapTableBody
@@ -187,9 +187,9 @@ const GetLapComparison = {
     });
     return olap_times[Math.min(...overallLaps)];
   },
-  getOverallMaximumTime: ()=> {
+  getOverallMaximumTime: () => {
     return olap_times[Math.max(...overallLaps)];
-  }
+  },
 };
 
 function lapComparison() {
