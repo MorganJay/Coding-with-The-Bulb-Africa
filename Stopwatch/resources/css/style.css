@@ -82,9 +82,39 @@ main::-webkit-scrollbar-thumb:hover {
   border-collapse: collapse;
 }
 
+.min {
+  color: blue;
+}
+
+.max {
+  color: red;
+}
+
+#arrowup {
+  position: absolute;
+  left: 0;
+}
+
 th {
   text-align: center;
   border-bottom: 1px solid #555;
+}
+
+tbody tr td:first-of-type {
+  padding: 0.5em 0;
+}
+
+tr.max > td:first-child::before {
+  content: "🠉";
+  position: fixed;
+  left: 39px;
+  
+}
+
+tr.min > td:first-child::before {
+  content: "🠋";
+  position: fixed;
+  left: 39px;
 }
 
 span.ripple {
@@ -263,7 +293,7 @@ section {
 
 @media (min-height: 721px) {
   main {
-    max-height: 400px;
+    max-height: 350px;
   }
 
   .container {

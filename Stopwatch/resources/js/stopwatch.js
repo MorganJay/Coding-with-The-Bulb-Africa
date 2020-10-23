@@ -20,6 +20,8 @@ let lminutes = 0;
 
 //Global time variables and selectors
 let leadingZero = 0;
+let arrowup = "&#x2191;";
+let htmarrow = "&uarr;";
 const dhours = document.querySelector(".hours");
 const display = document.querySelector(".time--display");
 const lapTable = document.querySelector(".laps-table");
@@ -33,7 +35,7 @@ const stopBtn = document.querySelector(".button--stop");
 const btn = document.querySelector(".btn");
 
 function toggleDarkMode() {
-    halfmoon.toggleDarkMode();
+  halfmoon.toggleDarkMode();
 }
 
 //Normal time functions
@@ -101,7 +103,6 @@ function displayLapTimer() {
   } else {
     lapmilliseconds = `${lmilliseconds}`;
   }
-
   if (lseconds < 10) {
     lapseconds = `0${lseconds.toString()}`;
   } else {
@@ -135,45 +136,115 @@ function laptimeCount() {
   displayLapTimer();
 }
 
+const countInArray = (array) => (value) => {
+  let count = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === value) {
+      count++;
+    }
+  }
+  return count;
+};
+
+const GetLapComparison = {
+  getMinimumLap: () => {
+    let laps = new Array();
+    lapTableBody
+      .querySelectorAll(".laptime")
+      .forEach((time) => laps.push(time.textContent));
+    const lap_times = {};
+    laps = laps.map((lapTime) => {
+      lap = Number(lapTime.replace(/:/g, ""));
+      lap_times[lap] = lapTime;
+      return lap;
+    });
+    return lap_times[Math.min(...laps)];
+  },
+  getMaximumLap: () => {
+    let laps = new Array();
+    lapTableBody
+      .querySelectorAll(".laptime")
+      .forEach((time) => laps.push(time.textContent));
+    const laptimes = {};
+    laps = laps.map((lapTime) => {
+      lap = Number(lapTime.replace(/:/g, ""));
+      laptimes[lap] = lapTime;
+      return lap;
+    });
+    // console.log(lap_times);
+    return laptimes[Math.max(...laps)];
+  },
+  getOverallMinimumTime: ()=> {
+    let overallLaps = new Array();
+    const olap_times = {};
+    lapTableBody
+      .querySelectorAll(".overalltime")
+      .forEach((time) => overallLaps.push(time.textContent));
+    overallLaps = overallLaps.map((overallTime) => {
+      time = Number(overallTime.replace(/:/g, ""));
+      olap_times[lap] = overallTime;
+      return time;
+    });
+    return olap_times[Math.min(...overallLaps)];
+  },
+  getOverallMaximumTime: ()=> {
+    return olap_times[Math.max(...overallLaps)];
+  }
+};
+
+function lapComparison() {
+  let lapRow = lapTableBody.querySelectorAll("tr");
+  lapRow.forEach((tr) => tr.classList.remove("min", "max"));
+  lapRow.forEach((row) => {
+    if (row.children[1].textContent == GetLapComparison.getMinimumLap()) {
+      row.classList.add("min");
+    }
+  });
+
+  //maximum lap
+  lapRow.forEach((row) => {
+    if (row.children[1].textContent == GetLapComparison.getMaximumLap()) {
+      row.classList.add("max");
+    }
+  });
+}
+
 function lapPrint() {
   lapnumber++;
-  const lap = document.createElement("tr");
+  let lap = document.createElement("tr");
   if (lapnumber === 1) {
     lapnumber = "0" + lapnumber.toString();
     lap.innerHTML = `<td>${lapnumber}</td>
-    <td>${display.textContent}</td>
-    <td>${display.textContent}</td>`;
+                     <td class="laptime">${display.textContent}</td>
+                     <td class="overalltime">${display.textContent}</td>`;
     lapTableBody.appendChild(lap);
-  } 
-  else {
+  } else {
     if (lapnumber < 10) {
-        lapnumber = "0" + lapnumber.toString();
+      lapnumber = "0" + lapnumber.toString();
     }
     lap.innerHTML = `<td>${lapnumber}</td>
-                   <td>${lapTimerDisplay.textContent}</td>
-                   <td>${display.textContent}</td>`;
+                    <td class="laptime">${lapTimerDisplay.textContent}</td>
+                    <td class="overalltime">${display.textContent}</td>`;
     lapTableBody.prepend(lap);
   }
-
-   
+  if (lapTableBody.childElementCount > 2) {
+    lapComparison();
+  }
 }
 
-
 function lapTimer() {
+  lapTable.classList.remove("button--hide");
+  lapTimerDisplay.classList.remove("button--hide");
   if (lapstart === 0) {
     lapstart = setInterval(laptimeCount, 10);
-    lapTable.classList.remove("button--hide");
-    lapTimerDisplay.classList.remove("button--hide");
     displayLapTimer();
     lapPrint();
   } else {
-    lapTable.classList.remove("button--hide");
-    lapTimerDisplay.classList.remove("button--hide");
     lapPrint();
+    displayLapTimer();
     lminutes = 0;
     lseconds = 0;
     lmilliseconds = 0;
-    displayLapTimer();
   }
 }
 
@@ -205,7 +276,7 @@ function resetTimer() {
   clearInterval(start);
   clearInterval(lapstart);
   lapstart = 0;
-  lapTableBody.querySelectorAll("tr").forEach((tr) => tr.remove())
+  lapTableBody.querySelectorAll("tr").forEach((tr) => tr.remove());
   startBtn.classList.remove("button--hide");
   resetBtn.classList.add("button--hide");
   resumeBtn.classList.add("button--hide");
@@ -247,31 +318,3 @@ stopBtn.addEventListener("click", stopTimer);
 lapBtn.addEventListener("click", lapTimer);
 resumeBtn.addEventListener("click", resumeTimer);
 resetBtn.addEventListener("click", resetTimer);
-
-//   if (lapnumber >= 1) {
-  // switch function isn't working
-  // switch (lmilliseconds) {
-  //   case lmilliseconds < 10:
-  //     lapmilliseconds = `0${lmilliseconds.toString()}`;
-  //     console.log(lapmilliseconds);
-  //     break;
-  //   default:
-  //     lapmilliseconds = `${lmilliseconds.toString()}`;
-  //     break;
-  // }
-  // switch (lseconds) {
-  //   case lseconds < 10:
-  //     lapseconds = `0${lseconds.toString()}`;
-  //     break;
-  //   default:
-  //     lapseconds = `${lseconds.toString()}`;
-  //     break;
-  // }
-  // switch (lminutes) {
-  //   case lminutes < 10:
-  //     lapminutes = `0${lminutes.toString()}`;
-  //     break;
-  //   default:
-  //     lapminutes = `${lminutes.toString()}`;
-  //     break;
-  // }
