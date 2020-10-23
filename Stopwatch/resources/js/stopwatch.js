@@ -196,7 +196,8 @@ function lapComparison() {
   let lapRow = lapTableBody.querySelectorAll("tr");
   lapRow.forEach((tr) => {
     tr.classList.remove("min", "max");
-    tr.children[0].removeAttribute("arrow-up","arrow-down");
+    tr.children[0].removeAttribute("arrow-down");
+    tr.children[0].removeAttribute("arrow-up");
   });
   lapRow.forEach((row) => {
     if (row.children[1].textContent == GetLapComparison.getMinimumLap()) {
