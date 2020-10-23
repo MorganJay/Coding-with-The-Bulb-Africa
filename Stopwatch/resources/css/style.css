@@ -80,6 +80,7 @@ main::-webkit-scrollbar-thumb:hover {
   width: 90%;
   color: rgb(165, 165, 165);
   border-collapse: collapse;
+  font-family: "Droid Sans", sans-serif;
 }
 
 .min {
@@ -106,12 +107,10 @@ tbody tr td:first-of-type {
 
 tr.max > td:first-child::before {
   content: "🠉";
-  font-family: "Droid Sans", sans-serif;
 }
 
 tr.min > td:first-child::before {
   content: "🠋";
-  font-family: "Droid Sans", sans-serif;
 }
 
 span.ripple {
