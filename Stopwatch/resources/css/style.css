@@ -1,17 +1,21 @@
 @font-face {
-  font-family: 'fontello';
-  src: url('./font/fontello.eot?38474846#iefix') format('embedded-opentype'),
-       url('/Stopwatch/resources/fontello-77fd7c91/font/fontello.woff') format('woff'),
-       url('/Stopwatch/resources/fontello-77fd7c91/font/fontello.svg') format('svg');
+  font-family: "fontello";
+  src: url("./font/fontello.eot?38474846#iefix") format("embedded-opentype"),
+    url("https://github.com/MorganJay/Coding-with-The-Bulb-Africa/blob/master/Stopwatch/resources/fontello-77fd7c91/font/fontello.woff")
+      format("woff"),
+    url("https://github.com/MorganJay/Coding-with-The-Bulb-Africa/blob/master/Stopwatch/resources/fontello-77fd7c91/font/fontello.svg")
+      format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'fontello';
-  src: url('./font/fontello.eot?49876099#iefix') format('embedded-opentype'),
-       url('/Stopwatch/resources/fontello-e2236f56/font/fontello.woff') format('woff'),
-       url('./font/fontello.svg?49876099#fontello') format('svg');
+  font-family: "fontello";
+  src: url("./font/fontello.eot?49876099#iefix") format("embedded-opentype"),
+    url("https://github.com/MorganJay/Coding-with-The-Bulb-Africa/blob/master/Stopwatch/resources/fontello-e2236f56/font/fontello.woff")
+      format("woff"),
+    url("https://github.com/MorganJay/Coding-with-The-Bulb-Africa/blob/master/Stopwatch/resources/fontello-e2236f56/font/fontello.svg")
+      format("svg");
 }
 
 * {
@@ -22,9 +26,9 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", "Droid Sans",Tahoma, Geneva, Verdana, sans-serif, Geneva, Tahoma,
-    sans-serif, "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
-    Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", "Droid Sans", Tahoma, Geneva, Verdana, sans-serif,
+    Geneva, Tahoma, sans-serif, "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   user-select: none;
   overflow: hidden;
   display: grid;
@@ -38,19 +42,19 @@ body {
   right: 0;
 }
 
-.arrow-up{
+.arrow-up {
   width: 1px;
   height: 3px;
   border-radius: 30px;
   /* background-color: red; */
-  position: relative; 
+  position: relative;
   /* top: 8px; */
   /* right: 1px; */
   /* transform: rotate(-90deg); */
   /* box-shadow: 1px 1px 1px rgba(127, 127, 127, 0.6); */
 }
 
-.arrow-up::before{
+.arrow-up::before {
   content: "";
   display: inline-block;
   width: 10px;
@@ -62,9 +66,9 @@ body {
   right: -2px;
   bottom: -3px;
   box-shadow: 1px 1px 1px rgba(127, 127, 127, 0.6);
-} 
+}
 
-.arrow-up::after{
+.arrow-up::after {
   content: "";
   display: inline-block;
   width: 10px;
@@ -159,29 +163,15 @@ tbody tr td:first-of-type {
   padding: 0.5em 0;
 }
 
-th[data-icon]::before, .demo-icon{
-  content: attr(data-icon);
-  font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak-as: never;
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      margin-right: .2em;
-      text-align: center;
-      text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
-}
-/* 
-tr.max > td:first-child{
+/* tr.max > td:first-child{
     padding-right: 1.2rem;
     padding-left: 0;
-} */
+}
 
 tr.min > td:first-child{
   padding-right: 1.2rem;
     padding-left: 0;
-}
+} */
 
 [arrow-up]::before {
   content: attr(arrow-up);
