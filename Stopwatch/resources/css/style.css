@@ -163,7 +163,7 @@ tbody tr td:first-of-type {
   padding: 0.5em 0;
 }
 
-/* tr.max > td:first-child{
+tr.max > td:first-child{
     padding-right: 1.2rem;
     padding-left: 0;
 }
@@ -171,36 +171,23 @@ tbody tr td:first-of-type {
 tr.min > td:first-child{
   padding-right: 1.2rem;
     padding-left: 0;
-} */
+} 
 
 [arrow-up]::before {
   content: attr(arrow-up);
-  font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak-as: none;
-      text-decoration: inherit;
-      text-align: center;
-      line-height: 1em;
-      width: 1em;
-      font-variant: normal;
-      text-transform: none;
-      text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  padding-top: 3.4px;
+  position: sticky;
+  left: -10px;
+  text-align: center;
 }
 
 [arrow-down]::before {
   content: attr(arrow-down);
-  font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak-as: none;
-      text-decoration: inherit;
-      text-align: center;
-      line-height: 1em;
-      width: 1em;
-      font-variant: normal;
-      text-transform: none;
-      text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+  position: sticky;
+  left: -10px;
+  padding-top: 3.4px;
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
 
 span.ripple {

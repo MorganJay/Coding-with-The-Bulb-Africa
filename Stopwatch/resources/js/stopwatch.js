@@ -196,13 +196,13 @@ function lapComparison() {
   let lapRow = lapTableBody.querySelectorAll("tr");
   lapRow.forEach((tr) => {
     tr.classList.remove("min", "max");
-    // tr.children[0].removeAttribute("arrow-down");
+    tr.children[0].removeAttribute("arrow-down");
     tr.children[0].removeAttribute("arrow-up");
   });
   lapRow.forEach((row) => {
     if (row.children[1].textContent == GetLapComparison.getMinimumLap()) {
       row.classList.add("min");
-      // row.children[0].setAttribute("arrow-down", "🠋");
+      row.children[0].setAttribute("arrow-down", "\u21D3");
     }
   });
 
@@ -210,7 +210,7 @@ function lapComparison() {
   lapRow.forEach((row) => {
     if (row.children[1].textContent == GetLapComparison.getMaximumLap()) {
       row.classList.add("max");
-      // row.children[0].setAttribute("arrow-up", "\uE801");
+      row.children[0].setAttribute("arrow-up", "\u21D1");
     }
   });
 }
