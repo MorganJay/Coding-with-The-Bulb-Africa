@@ -202,7 +202,7 @@ function lapComparison() {
   lapRow.forEach((row) => {
     if (row.children[1].textContent == GetLapComparison.getMinimumLap()) {
       row.classList.add("min");
-      row.children[0].setAttribute("arrow-down", "");
+      row.children[0].setAttribute("arrow-down", "🠋");
     }
   });
 
@@ -211,6 +211,7 @@ function lapComparison() {
     if (row.children[1].textContent == GetLapComparison.getMaximumLap()) {
       row.classList.add("max");
       row.children[0].setAttribute("arrow-up", "");
+      row.children[0].classList.add("arrow-up");
     }
   });
 }

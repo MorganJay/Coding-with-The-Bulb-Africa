@@ -38,6 +38,45 @@ body {
   right: 0;
 }
 
+.arrow-up{
+  width: 1px;
+  height: 3px;
+  border-radius: 30px;
+  /* background-color: red; */
+  position: relative; 
+  /* top: 8px; */
+  /* right: 1px; */
+  /* transform: rotate(-90deg); */
+  /* box-shadow: 1px 1px 1px rgba(127, 127, 127, 0.6); */
+}
+
+.arrow-up::before{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: red;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: -2px;
+  bottom: -3px;
+  box-shadow: 1px 1px 1px rgba(127, 127, 127, 0.6);
+} 
+
+.arrow-up::after{
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: red;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -2px;
+  bottom: 3px;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -131,38 +170,13 @@ th[data-icon]::before, .demo-icon{
       width: 1em;
       margin-right: .2em;
       text-align: center;
-      /* opacity: .8; */
-     
-      /* For safety - reset parent styles, that can break glyph codes*/
-      font-variant: normal;
-      text-transform: none;
-     
-      /* fix buttons height, for twitter bootstrap */
-      line-height: 1em;
-     
-      /* Animation center compensation - margins should be symmetric */
-      /* remove if not needed */
-      margin-left: .2em;
-     
-      /* You can be more comfortable with increased icons size */
-      /* font-size: 120%; */
-     
-      /* Font smoothing. That was taken from TWBS */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-     
-      /* Uncomment for 3D effect */
       text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
-
-.demo-icon{
-  content: "";
-}
-
+/* 
 tr.max > td:first-child{
     padding-right: 1.2rem;
     padding-left: 0;
-}
+} */
 
 tr.min > td:first-child{
   padding-right: 1.2rem;
