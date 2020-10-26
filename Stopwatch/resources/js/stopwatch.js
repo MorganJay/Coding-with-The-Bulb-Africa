@@ -98,22 +98,18 @@ function timeCount() {
 
 //Lap timer functions
 function displayLapTimer() {
-  if (lmilliseconds < 10) {
-    lapmilliseconds = `0${lmilliseconds.toString()}`;
-  } else {
-    lapmilliseconds = `${lmilliseconds}`;
-  }
-  if (lseconds < 10) {
-    lapseconds = `0${lseconds.toString()}`;
-  } else {
-    lapseconds = `${lseconds}`;
+  switch (lmilliseconds) {
+    case lmilliseconds < 10:
+      lapmilliseconds = `0${lmilliseconds.toString()}`;
+      break;
+    default:
+      lapmilliseconds = `${lmilliseconds}`;
+      break;
   }
 
-  if (lminutes < 10) {
-    lapminutes = `0${lminutes.toString()}`;
-  } else {
-    lapminutes = `${lminutes}`;
-  }
+  lapseconds = (lseconds < 10)? `0${lseconds.toString()}` : lseconds;
+
+  lapminutes = (lminutes < 10)? `0${lminutes.toString()}` : lminutes;
 
   lapTimerDisplay.innerHTML =
     lapminutes + ":" + lapseconds + "." + lapmilliseconds;
@@ -138,11 +134,15 @@ function laptimeCount() {
 
 const countInArray = (array) => (value) => {
   let count = 0;
+  let index = new Array();
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === value) {
+    if (array[i] === value) 
+    {
       count++;
+      index.push(array.indexOf(i));
     }
   }
+  console.log(count, index);
   return count;
 };
 
@@ -171,7 +171,6 @@ const GetLapComparison = {
       laptimes[lap] = lapTime;
       return lap;
     });
-    // console.log(lap_times);
     return laptimes[Math.max(...laps)];
   },
   getOverallMinimumTime: () => {
@@ -192,6 +191,42 @@ const GetLapComparison = {
   },
 };
 
+class GetLapComparisono{
+  constructor(laps, lap_times){
+      this.laps = laps; 
+      this.lap_times = lap_times;
+  }
+  laps = [];
+  lap_times = document.querySelectorAll(".laptime");
+
+  populateLaps(){
+    lap_times.forEach(time => 
+      this.laps.push(time.textContent));
+  }
+
+  mapLaps(){
+    this.laps = this.laps.map((lapTime) =>{
+      lap = Number(lapTime.replace(/:/g, ""));
+      this.lap_times[lap] = lapTime;
+      return lap;
+    });
+  }
+
+  getMinimumLap(){
+    this.populateLaps();
+    this.mapLaps();
+    return this.lap_times[Math.min(...this.laps)];
+  }
+
+  getMaximumLap(){
+    this.populateLaps();
+    this.mapLaps();
+    return this.lap_times[Math.max(...this.laps)];
+  }
+
+}
+
+
 function lapComparison() {
   let lapRow = lapTableBody.querySelectorAll("tr");
   lapRow.forEach((tr) => {
@@ -199,6 +234,7 @@ function lapComparison() {
     tr.children[0].removeAttribute("arrow-down");
     tr.children[0].removeAttribute("arrow-up");
   });
+  //minimum lap
   lapRow.forEach((row) => {
     if (row.children[1].textContent == GetLapComparison.getMinimumLap()) {
       row.classList.add("min");
@@ -246,8 +282,8 @@ function lapTimer() {
     displayLapTimer();
     lapPrint();
   } else {
-    lapPrint();
     displayLapTimer();
+    lapPrint();
     lminutes = 0;
     lseconds = 0;
     lmilliseconds = 0;

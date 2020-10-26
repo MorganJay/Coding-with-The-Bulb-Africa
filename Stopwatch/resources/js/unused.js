@@ -8,7 +8,7 @@ function indexesOf(array) {
   return indexes;
 }
 
-//   if (lapnumber >= 1) {
+
 // switch function isn't working
 // switch (lmilliseconds) {
 //   case lmilliseconds < 10:

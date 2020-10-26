@@ -21,7 +21,7 @@
 //   this.author = author;
 //   this.year = year;
 // }
-// // //GetSUmmary
+// // //GetSummary
 // Book.prototype.getSummary = function () {
 //   return `${this.title} was written by ${this.author} in ${this.year}.`;
 // };
@@ -121,6 +121,41 @@ class Book {
   getSummary() {
     return `${this.title} was written by ${this.author} in ${this.year}.`;
   }
+}
+
+class GetLapComparisono{
+  constructor(laps, lap_times){
+      this.laps = laps; 
+      this.lap_times = lap_times;
+  }
+  laps = [];
+  lap_times = document.querySelectorAll(".laptime");
+
+  populateLaps(){
+    lap_times.forEach(time => 
+      this.laps.push(time.textContent));
+  }
+
+  mapLaps(){
+    this.laps = this.laps.map((lapTime) =>{
+      lap = Number(lapTime.replace(/:/g, ""));
+      this.lap_times[lap] = lapTime;
+      return lap;
+    });
+  }
+
+  getMinimumLap(){
+    this.populateLaps();
+    this.mapLaps();
+    return this.lap_times[Math.min(...this.laps)];
+  }
+
+  getMaximumLap(){
+    this.populateLaps();
+    this.mapLaps();
+    return this.lap_times[Math.max(...this.laps)];
+  }
+
 }
 
 class Magazine extends Book {
