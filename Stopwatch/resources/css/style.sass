@@ -1,217 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(100px, auto);
-  gap: 1em;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, Geneva, Tahoma,
-    sans-serif, "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
-    Geneva, Verdana, sans-serif;
-  height: 100vh;
-}
-
-main {
-  text-align: center;
-  justify-items: center;
-  justify-content: center;
-  width: 90%;
-  margin: 1em auto;
-  overflow-y: auto;
-  max-height: 300px;
-  color: grey;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-/* main::-webkit-scrollbar{
-  width: 10px;
-} */
-
-main::-webkit-scrollbar-track{
-  background: white;
-}
-
-main::-webkit-scrollbar-thumb{
-  background: #888;
-}
-
-main::-webkit-scrollbar-thumb:hover{
-  background: #555;
-}
-
-.lap--heading, .laps{
-  display: inline-flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.underline
-{
-  padding-bottom: 0.5em;
-  border-bottom: 1.5px solid gainsboro;
-}
-
-.time--display{
-  margin: auto;
-  font-size: 5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* .lap--results {
-  padding: 1rem;
-  width: 70%;
-  margin: auto;
- 
-} */
-
-.lap--results p {
-  border: 1px solid red;
-  padding: 1rem;
-  font-size: large;
-  
-}
-
-span.ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 600ms linear;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-button {
-  border-radius: 45px;
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 0.8rem 2rem;
-  color: white;
-  background-color: royalblue;
-  cursor: pointer;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+.arrow-up {
+  width: 1px;
+  height: 3px;
+  border-radius: 30px;
+  /* background-color: red; */
   position: relative;
-  overflow: hidden;
-  transition: background 400ms;
-  user-select: none;
+  /* top: 8px; */
+  /* right: 1px; */
+  /* transform: rotate(-90deg); */
+  /* box-shadow: 1px 1px 1px rgba(127, 127, 127, 0.6); */
 }
 
-footer {
-  width: 90%;
-  margin: auto;
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(3, auto);
-  grid-auto-rows: 1fr;
-  gap: 1em;
+/* .arrow-up::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: red;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: -2px;
+  bottom: -3px;
+  box-shadow: 1px 1px 1px rgba(127, 127, 127, 0.6);
 }
 
-.start {
-  grid-column: 2;
-}
-
-.stop {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.button--stop {
-  background-color: crimson;
-  color: white;
-}
-
-.moveLeft {
-  animation: movetoLeft 0.6s ease-out;
-}
-
-.moveRight {
-  animation: movetoRight 0.6s ease-out;
-}
-
-.lap {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.button--lap {
-  background-color: black;
-  color: white;
-  transition: 500ms ease-out;
-}
-
-.reset {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.button--reset {
-  color: white;
-  background-color: black;
-}
-
-.resume {
-  grid-row: 1;
-  grid-column: 1;
-}
-
-.button--hide {
-  display: none;
-}
-
-@keyframes movetoLeft {
-  from {
-    transform: translateX(130px);
-  }
-  to {
-    transform: translateX(0px);
-  }
-}
-
-@keyframes movetoRight {
-  from {
-    transform: translateX(-130px);
-  }
-  to {
-    transform: translateX(0px);
-  }
-}
-
-@media(max-width: 400px){
-  @keyframes movetoLeft {
-    from {
-      transform: translateX(45px);
-    }
-    to {
-      transform: translateX(0px);
-    }
-  }
-
-  @keyframes movetoRight {
-    from {
-      transform: translateX(-45px);
-    }
-    to {
-      transform: translateX(0px);
-    }
-  }
-
-  footer{
-    gap: 0.5em;
-    margin: 1em;
-  }
-}
+.arrow-up::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 3px;
+  border-radius: 20px;
+  background-color: red;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -2px;
+  bottom: 3px;
+} */

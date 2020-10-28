@@ -124,12 +124,12 @@ class Book {
 }
 
 class GetLapComparisono{
-  constructor(laps, lap_times){
-      this.laps = laps; 
-      this.lap_times = lap_times;
-  }
-  laps = [];
-  lap_times = document.querySelectorAll(".laptime");
+  // constructor(laps, lap_times){
+  //     this.laps = laps; 
+  //     this.lap_times = lap_times;
+  // }
+  // laps = [];
+  // lap_times = document.querySelectorAll(".laptime");
 
   populateLaps(){
     lap_times.forEach(time => 
