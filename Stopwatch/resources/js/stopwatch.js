@@ -251,9 +251,7 @@ function lapComparison() {
         overallMinimumTime = GetLapComparison.getOverallMinimumTime();
         //in a case where the minimum lap reduces on-the-fly
         if (row.children[1].textContent != minimumLap) {
-          row.classList.remove("min");
-          row.children[2].classList.remove("omin");
-          row.children[0].removeAttribute("arrow-down");
+          removeAttribute_Class();
           GetLapComparison.overallLaps = [];
         }
        if (row.children[2].textContent === overallMinimumTime) {
@@ -263,12 +261,29 @@ function lapComparison() {
         }
       }
     }
+    // Maximum Lap
     maximumLap = GetLapComparison.getMaximumLap();
     if (row.children[1].textContent == maximumLap) 
     {
-      row.classList.add("max");
-      row.children[0].setAttribute("arrow-up", "\u21D1");
       row.children[2].classList.add("omax");
+      console.log(countInArray(GetLapComparison.laps)(maximumLap));
+      if (countInArray(GetLapComparison.laps)(maximumLap) === 1) {
+        row.classList.add("max");
+        row.children[0].setAttribute("arrow-up", "\u21D1");   
+      } 
+      else {
+        overallMaximumTime = GetLapComparison.getOverallMaximumTime();
+        //in a case where the maximum lap reduces on-the-fly
+        if (row.children[1].textContent != maximumLap) {
+          removeAttribute_Class();
+          GetLapComparison.overallLaps = [];
+        }
+       if (row.children[2].textContent === overallMaximumTime) {
+          removeAttribute_Class();
+          row.classList.add("max");
+          row.children[0].setAttribute("arrow-up", "\u21D1");
+        }
+      }
     }
 });
 }
