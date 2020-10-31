@@ -1,0 +1,21 @@
+ // JavaScript Object Notation
+
+Lightweight data-interchange format.
+
+Based on a subset of JavaScript
+
+Easy to read and write.
+
+Often used with AJAX. Asynchronous JavaScript and XML, used to send data back and forth from client and server without having to refresh the page in a browser.
+
+Can be used with most modern languages.
+
+Data Types
+Number
+String
+Boolean 
+Array
+Object
+Null
+
+MIME type: Application/json
