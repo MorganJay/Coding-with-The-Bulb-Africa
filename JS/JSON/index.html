@@ -1,18 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Sandbox</title>
 </head>
-<body>
-    
-    <script>
-        let person = {
-            name: "Kate"
-        }
 
-        console.log(person);
+<body>
+    <ul id="people">
+    </ul>
+
+    <script>
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let response = JSON.parse(xhttp.responseText);
+                let people = response.people;
+                //console.log(response.people);
+                let output = "";
+                people.forEach((peep) => {
+                    output += `<li> ${peep.name} </li>`;
+                });
+                document.getElementById("people").innerHTML = output;
+            }
+        };
+        xhttp.open("GET", "people.json", true);
+        xhttp.send();
     </script>
+    <!-- <script>
+        let person = {
+            name: "Kate",
+            age: 50,
+            address: {
+                street: "5 Ovwo Street",
+            city: "Mushin"
+            },
+            children: ["John", "Aaliyah"]
+        }
+        person = JSON.stringify(person);
+        person = JSON.parse(person);
+
+        const people = [
+            {
+                name: "Pastor",
+                age: 53
+            },
+            {
+                name: "Debbie",
+                age: 21
+            },
+            {
+                name: "Sara",
+                age: 23
+            }
+        ];
+        // console.log(people[2]);
+        let output = "";
+        people.forEach((peep)=> {
+            // console.log(peep)
+            output += `<li> ${peep.name} </li>` ;
+        });
+        document.getElementById("people").innerHTML = output;
+    </script> -->
 </body>
+
 </html>

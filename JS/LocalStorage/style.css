@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.items-start{
+    align-items: flex-start;
+}
+
+.justify-start{
+    justify-content: flex-start;
+}
+
+.comments-container{
+    border-radius: 8px;
+    border: 1px solid silver;
+    margin: 3rem auto;
+    max-width: 600px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments-container-title{
+    background: #f8f8f8;
+    border-bottom: 1px solid grey;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-top: 0;
+    padding: 1rem 2rem;
+}
+
+.comments, .comments-new{
+    padding: 1rem 2rem;
+}
+
+.comment{
+    padding: 1rem 0;
+}
+
+.comment-new{
+    border-top: 1px solid #ebebeb;
+    margin: 1rem 0;
+    padding-top: 2rem;
+}
+
+.comment-avatar{
+    border-radius: 50%;
+    height: 48px;
+    margin-right: 1rem;
+    width: 48px;
+}
+
+.comment-author{
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.comment-body{
+    color: dimgray;
+    line-height: 1.4;
+    margin: 0;
+    padding-right: 1rem;
+}
+
+.comment-input{
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    line-height: 1.4;
+    font-size: 1rem;
+    padding: .8rem;
+    width: 100%;
+}
+
+.comment-input:focus{
+    border-color: cornflowerblue;
+    outline: none;
+}
+
+.comment-submit{
+    background: royalblue;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 0.05rem;
+    margin-top: .5rem;
+    padding: 10px 16px;
+    text-transform: uppercase;
+}
+
+.comment-submit:hover, .comment-submit-focus{
+    filter: brightness(120%);
+}
