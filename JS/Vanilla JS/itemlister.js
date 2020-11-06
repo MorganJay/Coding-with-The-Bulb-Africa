@@ -23,9 +23,9 @@ filter.addEventListener('keyup', filterItems);
 //Add item
 function addItem(e) {
   e.preventDefault();
-  if (condition) {
+  // if (condition) {
       
-  } else {
+  // } else {
        //Get input value
   const newItem = document.getElementById("additem").value;
 
@@ -48,10 +48,8 @@ function addItem(e) {
 
   //Append li to list
   itemList.appendChild(li);
-  }
- 
+ // }
   document.getElementById("additem").value = '';
-
 }
 
 
@@ -76,5 +74,5 @@ function filterItems(e){
         else{
             item.style.display = 'none';
         }
-    })
+    });
 }
