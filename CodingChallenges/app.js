@@ -8,19 +8,22 @@ const ints = [
 // populate the primeNums array with all the prime
 // numbers in ints
 const primeNums = [];
-const getPrimeNumbers = () => {
-    for (let i = 2; i <= ints.length; i++) {
-        for (let j = 2; j < i; j++) {
-            if (i % j === 0) {
-                // primeNums.push(i);
-            }
-            primeNums.push(i);
-        }
+const getPrimeNumbers = num => {
+    for (let i = 2; num > i; i++) {
+      if (num % i === 0) return false
     }
-    return primeNums;
+    return num > 1;
 };
 
-console.log(getPrimeNumbers());
+for(let i = 0; i < ints.length; i++){
+    if(getPrimeNumbers(ints[i])) {
+
+      primeNums.push(ints[i])
+    }
+  }
+
+console.log(primeNums);
+
 
 
 

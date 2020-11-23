@@ -17,15 +17,13 @@ const person2 = new Person("James", "Morgan", "12-1-2024");
 
 //Ternary operator
 const x = 3;
-const color = x > 10 ? 'red' : 'blue';
+const color = x > 10 ? "red" : "blue";
 
 const form = document.querySelector("#userform");
 const usernameInput = document.querySelector("#username");
 const usersList = document.querySelector("#users");
 const submit = document.querySelector("#button");
 const passwordInput = document.querySelector("#password");
-// usernameInput.classList.add("invalid");
-// passwordInput.classList.add("invalid");
 
 function clearInputs() {
   usernameInput.value = "";
@@ -44,10 +42,22 @@ function onSubmit(e) {
     li.appendChild(
       document.createTextNode(
         `${usernameInput.value} || ${passwordInput.value}`
-      ));
+      )
+    );
     usersList.appendChild(li);
   }
   clearInputs();
+}
+
+document.onkeypress = function (e){
+  e = e || window.event;
+
+  if (e.key == "Enter") {
+      document.documentElement.classList.toggle("dark-mode");
+      document.querySelectorAll(".inverted").forEach((result) => {
+          result.classList.toggle("invert");
+      })
+  }
 }
 
 form.addEventListener("submit", onSubmit);

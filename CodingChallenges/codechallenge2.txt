@@ -1,0 +1,15 @@
+      Mr Akanbi is planning to visit his village this December.
+      He is concerned about how to manage the SHARING OF HIS money among his kinsmen so he decided to contact his son who is a software developer at the Bulb Africa to help him with a program that will help him to sort that out. 
+      He is to write a function that will take two arguments; First argument is the total amount he will spend, second argument is the age of his kinsmen present in an array. 
+      
+      conditions:
+      so for people whose age is between 0 - 20 they should have 20% of the
+      total money while for people within the range of 21 - 45 they will have a
+      share of 30%; and for people whose age is between is between 46 - 65 they
+      will have a share of 45%; and for people whose age is above 65 thy will
+      have a share of 50%; The program should return an array that will contain
+      the amount each kinsmen have. 
+
+      the output should return an array with the amount of each kinsmen get in an array form <div class="">
+
+      MoneyFormula(40000,[30,56,79]) => output [x,y,z]

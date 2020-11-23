@@ -1,84 +1,89 @@
-*
-{
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.dark-mode {
+  /* filter: invert(100%); */
+  filter: invert(1) hue-rotate(180deg);
+  background: white;
 }
 
-h2
-{
-    color: rgb(0, 38, 255);
-    margin: 0;
+.invert {
+  filter: invert(1) hue-rotate(180deg);
 }
 
-.form
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 90vh;
-    flex-direction: column;
-    width: 80%;
-    margin: 40px auto;
+* {
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-.input-fields
-{
-    display: block;
-    height: 30px;
-    width: 350px;
-    margin-bottom: 15px;
-    padding: 15px;
-    border: 1px solid #ccc;
+body {
+  overflow: hidden;
 }
 
-.input-fields:focus
-{
-    outline: none;
-    box-shadow: 1px;
+h2 {
+  color: rgb(0, 38, 255);
+  margin: 0;
 }
 
-#button
-{
-    background-color: rgb(76, 0, 255);
-    color: white;
-    border: none;
-    padding: 10px 0px 10px 0px ;
-    width: 350px;
-    cursor: pointer;
-}
-   
-input:invalid
-{
-    border-left: 3px solid red;
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  flex-direction: column;
+  width: 80%;
+  margin: 40px auto;
 }
 
-.invalid{
-    border-left: 3px solid red;
+.input-fields {
+  display: block;
+  height: 30px;
+  width: 350px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ccc;
 }
 
-.valid{
-    border-left: 3px solid green;
+.input-fields:focus {
+  outline: none;
+  box-shadow: 1px;
 }
 
-input:valid
-{
-    border-left: 3px solid green;
+#button {
+  background-color: rgb(76, 0, 255);
+  color: white;
+  border: none;
+  padding: 10px 0px 10px 0px;
+  width: 350px;
+  cursor: pointer;
 }
 
-#button:hover
-{
-    background-color: rgb(58, 3, 187);
+input:invalid {
+  border-left: 3px solid red;
 }
 
-#users{
-    padding: 0;
-    align-self: stretch;
-    padding: 0 4em;
+.invalid {
+  border-left: 3px solid red;
 }
 
-#users li{
-    /* list-style-type: none; */
-    background-color: #ccc;
-    margin: 1em auto;
-    padding: 1rem;
+.valid {
+  border-left: 3px solid green;
+}
+
+input:valid {
+  border-left: 3px solid green;
+}
+
+#button:hover {
+  background-color: rgb(58, 3, 187);
+}
+
+#users {
+  padding: 0;
+  align-self: stretch;
+  padding: 0 4em;
+}
+
+#users li {
+  background-color: #ccc;
+  margin: 1em auto;
+  padding: 1rem;
 }
