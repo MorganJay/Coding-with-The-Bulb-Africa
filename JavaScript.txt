@@ -1,0 +1,7 @@
+	Use cases
+	
+Edge cases  - 	Trade offs
+
+1. loosely-typed
+2. functional programming
+3. Unstructured

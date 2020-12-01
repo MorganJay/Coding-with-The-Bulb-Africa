@@ -1,79 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style-type: none;
-    text-decoration: none;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    height: 100vh;
-    background-color: #fff;
-    font-family: 'Poppins', sans-serif;
+body {
+  height: 100vh;
+  background-color: #fff;
 }
 
-nav{
-    height: auto;
-    padding: 2% 10%;
+nav {
+  height: auto;
+  padding: 2% 10%;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-around;
+.navbar {
+  display: flex;
+  justify-content: space-around;
 }
 
-.logo{
-    font-size: 26px;
+
+.logo h2 {
+  font-size: 40px;
+  font-weight: 600;
 }
 
-.logo h2{
-    font-size: 26px;
-    font-weight: 900;
+.icon {
+  margin-right: 10px;
+  color: #7862f9;
 }
 
-.icon{
-    margin-right: 5px;
-    color: #7862f9;
+.nav--main{
+    align-self: center;
 }
 
-.navbar ul{
-    margin-top: 7px;
+.navbar li {
+  display: inline;
+  margin-right: 25px;
 }
 
-.navbar li{
-    display: inline;
-    margin-right: 25px;
+.navbar li:hover {
+  border-top: 5px solid #725cff;
+  padding-top: 37px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  transition: all 0.2s ease-in;
 }
 
-.navbar li:hover{
-    border-top: 5px solid #725cff;
-    padding-top: 20px;
-    /* border: 1px solid #725cff; */
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    transition: all 0.2s ease-in;
+.navbar a {
+  color: #000;
 }
 
-.navbar a{
-    color: #000;
+button {
+  background-color: #735dfe;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 45px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .05rem;
 }
 
-.signup--button{
-    background-color: #735dfe;
-    color: white;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 45px;
-    cursor: pointer;
-    border: none;
-    outline: none;
+button:hover {
+  background-color: #fff;
+  border: 1px solid #735dfe;
+  color: #000;
+  transition: 0.2s ease-in;
 }
 
-.signup--button:hover{
-    background-color: #fff;
-    border: 1px solid #735dfe;
-    color: #000;
-    transition: 0.2s ease-in;
+main {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
 }
+
+.new {
+  color: #735dfe;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.content-left{
+    margin-top: 70px;
+}
+
+.content-left h1 {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.mantra {
+  margin: 30px auto;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.start {
+  padding: 10px 40px;
+}
+
+.play {
+  margin-left: 15px;
+  font-size: 40px;
+  color: #735dfe;
+  animation: playBtn 2s infinite;
+}
+
+@keyframes playBtn {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content-right{
+    /* margin-right: 60px; */
+}
+
+.box{
+    margin-top: 50px;
+    height: 420px;
+    width: 380px;
+    border-radius: 4rem;
+    background: linear-gradient(45deg,rgb(120,93,253), rgb(248, 29, 248));
+    /* position: relative; */
+}
+
+.woman{
+    width: 850px;
+    position: absolute;
+    right: 39px;
+    bottom: 134.5px;
+    /* overflow: hidden; */
+}
+
