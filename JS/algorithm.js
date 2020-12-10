@@ -53,3 +53,22 @@ function arraySum(array) {
 }
 
 console.log(sumArrayElements(numbers));
+
+// let a = 10;
+
+// let a = 32;
+
+function add(a = 0, b = 0) {
+  a = parseInt(a);
+  b = parseInt(b);
+  return a + b;
+}
+
+const a = parseInt(prompt("Enter a"));
+console.log(add("3", 4));
+
+import calculator from './Lifesaver/calculator.js';
+
+const calculate = new calculator;
+
+calculate.add(3,2);
