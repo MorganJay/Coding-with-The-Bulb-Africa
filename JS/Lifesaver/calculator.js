@@ -28,10 +28,8 @@
 const calculator = {
   A: 0,
   B: 0,
-  setA: function (a) {
+  setA: function (a = 0, b = 0) {
     this.A = parseInt(a);
-  },
-  setB: function (b) {
     this.B = parseInt(b);
   },
   add: function () {
@@ -46,10 +44,9 @@ const calculator = {
   divide: function () {
     return this.A / this.B;
   },
-  modulo: function(){
+  modulo: function () {
     return this.A % this.B;
   },
-  
 };
 
 const calculate = calculator;
