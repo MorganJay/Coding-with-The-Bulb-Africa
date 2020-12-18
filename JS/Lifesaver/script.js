@@ -50,33 +50,6 @@ const calculator = {
   },
 };
 
-//temperature object literal
-// celsius to fahrenheit
-// fahrenheit to celsius
+const [first, second, third, fourth] = [10, 30, 23, 534, 23];
 
-const temperature = {
-  celsius: 0,
-  fahrenheit: 0,
-  setCelsius: function (temp = 0) {
-    this.celsius = parseInt(temp);
-  },
-  setFahrenheit: function (temp = 0) {
-    this.fahrenheit = parseInt(temp);
-  },
-  toCelsius: function () {
-    if (this.celsius > 0) return this.celsius;
-
-    this.celsius = (this.fahrenheit - 32) * (5 / 9);
-    console.log(`${this.celsius} Fahrenheit equals ${this.celsius.toFixed(2)} Celsius`);
-  },
-  toFahrenheit: function () {
-    if (this.fahrenheit > 0) return this.fahrenheit;
-
-    this.fahrenheit = this.celsius * (9 / 5) + 32;
-    console.log(`${this.celsius} Celsius equals ${this.fahrenheit.toFixed(2)} F`);
-  },
-};
-
-temperature.setCelsius();
-//console.log(temperature.toCelsius());
-temperature.toFahrenheit();
+console.log(first); // 10
