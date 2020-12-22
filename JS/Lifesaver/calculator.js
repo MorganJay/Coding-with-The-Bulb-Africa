@@ -49,12 +49,55 @@ const calculator = {
   },
 };
 
-const calculate = calculator;
-calculate.setA(0);
-calculate.setB(4);
-console.log(calculator);
-console.log(calculate.add());
-console.log(calculate.multiply());
-console.log(calculate.divide());
-console.log(calculate.subtract());
-console.log(calculate.modulo());
+// const calculate = calculator;
+// calculate.setA(0);
+// calculate.setB(4);
+// console.log(calculator);
+// console.log(calculate.add());
+// console.log(calculate.multiply());
+// console.log(calculate.divide());
+// console.log(calculate.subtract());
+// console.log(calculate.modulo());
+
+//Constructor function
+
+function Calculator(firstNumber = 0, secondNumber = 0) {
+  this.firstNumber = firstNumber;
+  // let firstNumber = firstNumber;
+  this.secondNumber = secondNumber;
+  // let secondNumber = secondNumber;
+  this.add = function () {
+    let result = this.firstNumber + this.secondNumber;
+    switch (typeof result) {
+      case "number":
+        return `The addition of ${this.firstNumber} and ${this.secondNumber} = ${result}`        
+        
+        default:
+        return "Invalid operation"; 
+    }
+  };
+  this.subtract = function () {
+    return `The subtraction of ${this.secondNumber} from ${this.firstNumber} = ${this.firstNumber - this.secondNumber}`;
+  };
+  this.multiply = function () {
+    return `The multiplication of ${this.firstNumber} and ${this.secondNumber} = ${this.firstNumber * this.secondNumber}`;
+  };
+  this.divide = function () {
+     let result = this.firstNumber / this.secondNumber;
+     console.log(typeof result);
+     switch (typeof result) {
+       case "number":
+         if (result)
+              return `The division of ${this.firstNumber} by ${this.secondNumber} = ${result}`;
+       
+       default:
+         return "Invalid operation";
+     }
+  };
+}
+
+const myCalculator = new Calculator(9);
+console.log(myCalculator.add());
+console.log(myCalculator.multiply());
+console.log(myCalculator.subtract());
+console.log(myCalculator.divide());

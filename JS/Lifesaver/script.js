@@ -52,4 +52,17 @@ const calculator = {
 
 const [first, second, third, fourth] = [10, 30, 23, 534, 23];
 
-console.log(first); // 10
+//console.log(first); // 10
+
+const numbers = [1, 3, 5, 2, 534];
+console.log(Math.max(...numbers));
+const user = {
+  id: 1,
+  name: "John",
+};
+const user1 = { ...user, email: "jetmorgan.jm@gmail.com" }; // spread
+user1;
+user
+
+//Rest operators
+
