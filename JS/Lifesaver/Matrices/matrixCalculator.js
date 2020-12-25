@@ -19,12 +19,8 @@ function validateMatrices(matrix1, matrix2){
   for (let i = 0; i < matrix1.length; i++) {
     for (let j = 0; j < array.length; j++) {
       const element = array[j];
-      
     }
-    
   }
-
-
 };
 
 const matrixMultiply = (matrix1) => (matrix2) => {
