@@ -8,9 +8,8 @@ li
 ul
 {
     padding-inline-start: 30px;
-
 }
-textarea
-{
-    
+
+audio{
+    background-color: aqua;
 }

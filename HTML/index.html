@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learning HTML5">
+    <meta name="author" content="James Morgan">
     <link rel="stylesheet" href="style.css">
+    <!-- <base href="https://www.google.com" target="_blank"> -->
     <title>HTML Cheat Sheet</title>
 </head>
 
@@ -36,7 +39,6 @@
     </div>
     <!-- List -->
     <ul>List
-
         <li>Eggs</li>
         <li>Victoria</li>
         <li></li>
@@ -123,17 +125,59 @@
     </div>
 
     <!-- Image -->
-    <a href="https://thebulb.africa/" target="_blank">
+    <a href="thebulb" target="_blank">
         <!-- targets: _blank, _self(default), _parent, _top -->
         <img src="TheBulb.jfif" alt="The Bulb Africa" width="800">
     </a>
-    
-    <blockquote cite="morganjay.github.io"> 
+
+    <blockquote cite="morganjay.github.io">
         Lorem ipsum dolor sit amet.
     </blockquote>
 
     <cite>HTML crash course by Brad Traversy</cite>
-    <div style="margin-top: 500px;"></div>
+    <div>
+        <p><a href="gmail">Gmail</a> - Used to send emails; which are messages distributed by electronic means from one
+            computer user to one or more recipients via a network.</p>
+
+        <p><a href="hangouts">Hangouts</a> - It's used for Messaging, Voice and Video Calls</p>
+        <p><dfn><abbr title="HyperText Markup Language">HTML</abbr></dfn>
+            It's the standard markup language for creating web pages.</p>
+        <abbr title="Cascading Stylesheet">CSS</abbr>
+        <figure>
+            <pre>
+                <code>
+                    p {
+                        color: black;
+                        font-family: Helvetica, sans-serif;
+                        font-size: 1rem;
+                    }
+                </code>
+            </pre>
+            <figcaption>The code block</figcaption>
+        </figure>
+
+        <fig>
+            <img
+                src="https://images.unsplash.com/photo-1600618538034-fc86e9a679aa?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ" width="300" height="300">
+            <figcaption>basketball</figcaption>     
+        <fig>
+
+            <figure>
+                <video controls src="Home _ Twitter.ts">
+                    <source type="video/ts">
+                        Your browser does not support HTML5 video.
+                </video>
+                <figcaption>Exhibit B. The <cite>Rough Copy</cite> trailer.</figcaption>
+            </figure>
+
+            <figure>
+                <audio control autoplay>
+                    <source src="Upside Down.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                </audio>
+                <figcaption>Upside Down - JVKE</figcaption>
+            </figure>
+    </div>
 </body>
 
 </html>
