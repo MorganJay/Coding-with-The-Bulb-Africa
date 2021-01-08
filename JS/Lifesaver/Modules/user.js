@@ -8,8 +8,10 @@ class User {
   }
 }
 
-export const greetUser = (userFullName) => {
+//export
+const greetUser = (userFullName) => {
   return `Hello!, nice to meet you ${userFullName}`;
 };
 
-export default User;
+export { User, greetUser };
+// export default User;
