@@ -1,19 +1,19 @@
 const circle = {
-    radius: 7,
-    isVisible: true,
-    draw: function(){
-        console.log("draw");
-    }
+  radius: 7,
+  isVisible: true,
+  draw: function () {
+    console.log("draw");
+  },
 };
 
 // factory functions
-function createCircle(radius) { 
-    return {
-        radius,
-        draw(){
-            console.log("draw");
-        }
-    };
+function createCircle(radius) {
+  return {
+    radius,
+    draw() {
+      console.log("draw");
+    },
+  };
 }
 
 const circle1 = createCircle(4);
@@ -21,10 +21,10 @@ const circle1 = createCircle(4);
 
 //constructor functions
 function Circle(radius) {
-    this.radius = radius;
-    this.draw = function() {
-        console.log("draw");
-    }
+  this.radius = radius;
+  this.draw = function () {
+    console.log("draw");
+  };
 }
 
 //const circle = new Circle(100); // new creates an empty object then sets this to point to the origin object and finally returns it
@@ -40,27 +40,30 @@ function Circle(radius) {
 // console.log(newCircle);
 //console.log(circle.constructor);
 
-const Circle1 = new Function('radius', `this.radius = radius;
+const Circle1 = new Function(
+  "radius",
+  `this.radius = radius;
 this.draw = function() {
     console.log("draw")
-}`);
+}`
+);
 
 //const another = new Circle1(5);
 //console.log(another);
 
 // Functions are objects
-Circle.call({}, 1); 
-Circle.apply({}, [1,2,3]);
+Circle.call({}, 1);
+Circle.apply({}, [1, 2, 3]);
 
 // Values types vs Reference types
-// let x = {value: 10};
-// let y = x;
+let x = { value: 10 };
+let y = x;
 
-// x.value = 20;
-// console.log(x, y);
+x.value = 20;
+console.log(x, y);
 
 // for (const key in circle) {
-//     console.log(key, circle[key]);    
+//     console.log(key, circle[key]);
 // }
 
 // for (const key of Object.keys(circle)) {
@@ -80,11 +83,18 @@ Circle.apply({}, [1,2,3]);
 //     another[key] = circle[key];
 // }
 
-// const another = Object.assign({
-//     color: "Yellow"
-// }, circle);
+const another = Object.assign({
+    color: "Yellow"
+}, circle);
 
-const another = {...circle};
-//console.log(another);
+//const another = { ...circle };
+console.log(another);
 
 // Garbage Collection
+//MAth
+function getRandomArbitrary(min, max) {
+  let randomFloatNumber = Math.random() * (max - min) + min;
+  return Math.floor(randomFloatNumber);
+}
+
+console.log(getRandomArbitrary(1, 11));

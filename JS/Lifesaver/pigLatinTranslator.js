@@ -4,7 +4,7 @@ function firstToLast(string) {
   const stringArray = [...string];
   const firstCharacter = stringArray[0];
   const slicedString = stringArray.splice(1);
-  //console.log(slicedString);
+  console.log(slicedString);
   return slicedString.join("") + firstCharacter;
 }
 
@@ -14,7 +14,7 @@ function lastToFirst(string) {
   const stringArray = [...string];
   const lastCharacter = stringArray[stringArray.length - 1];
   const slicedString = stringArray.splice(0, stringArray.length - 1);
-  //console.log(slicedString);
+  console.log(slicedString);
   return lastCharacter + slicedString.join("");
 }
 
@@ -33,6 +33,7 @@ function textToPigLatin(string) {
 
 const pigLatin = textToPigLatin("the boy");
 console.log(pigLatin);
+
 function pigLatinToText(string) {
   const stringArray = string.toLowerCase().split(" ");
   const newStringArray = [];
