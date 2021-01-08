@@ -1,0 +1,80 @@
+/* reset begins */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  all: unset;
+}
+
+img {
+  display: block;
+  font-family: sans-serif;
+  font-weight: 300;
+  height: auto;
+  line-height: 2;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+img::before {
+  content: "We're sorry, the image below is broken :(";
+  display: block;
+  margin-bottom: 10px;
+}
+
+img::after {
+  content: "(url: " attr(src) ")";
+  display: block;
+  font-size: 12px;
+}
+/* reset ends */
+
+.container {
+  border: 1px solid red;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 2.7%;
+  display: flex;
+  padding: 1em;
+}
+
+.signin--panel {
+  width: 400px;
+  border: 1px solid black;
+}
+
+.signup--panel {
+  background-color: steelblue;
+  color: white;
+}
+
+.input--boxes {
+  margin: 1em;
+  display: block;
+}
+
+.input--boxes > * {
+  margin: 10px auto;
+  padding: 1em;
+  border-radius: 2%;
+}
