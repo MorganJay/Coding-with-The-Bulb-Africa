@@ -23,6 +23,7 @@ body {
 
 button {
   all: unset;
+  cursor: pointer;
 }
 
 img {
@@ -55,26 +56,64 @@ img::after {
   height: 80vh;
   border-radius: 2.7%;
   display: flex;
-  padding: 1em;
 }
 
 .signin--panel {
-  width: 400px;
-  border: 1px solid black;
+  width: 700px;
+  padding: 6em 0;
+  text-align: center;
+  position: relative;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* border: 1px solid black; */
 }
 
 .signup--panel {
   background-color: steelblue;
   color: white;
+  text-align: center;
+  border-bottom-right-radius: 3%;
+  border-top-right-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  height: 100%;
 }
 
 .input--boxes {
   margin: 1em;
-  display: block;
 }
 
 .input--boxes > * {
   margin: 10px auto;
   padding: 1em;
-  border-radius: 2%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.075);
+  color: black;
+  width: 35vw;
+  display: block;
+}
+
+.reset--password {
+  text-decoration: underline rgba(0, 0, 0, 0.377) 1px;
+  color: black;
+}
+
+.button--signin {
+  margin: 15px 0 auto;
+  background-color: transparent;
+  border: 2px solid steelblue;
+  padding: 1em 3em;
+  border-radius: 40px;
+}
+
+.button--signin:hover {
+  transition: all 0.3s ease-in;
+  background-color: steelblue;
+  color: white;
+}
+
+h1 {
 }
