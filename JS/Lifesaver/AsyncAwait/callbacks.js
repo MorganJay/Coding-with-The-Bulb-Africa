@@ -29,10 +29,9 @@ function createPost(post, callback) {
 //     }, 2000);
 //   });
 
-//Async /Await
+//Async / Await
 async function init(){
     await createPost({ title: "Post Three", body: "This is post three." });
-
     getPosts();
 }
 
@@ -41,9 +40,6 @@ init();
 // createPost({ title: "Post Three", body: "This is post three." })
 //   .then(getPosts)
 //   .catch((error) => console.log(error));
-
-
-
 
 //Promise.all
 const promise1 = Promise.resolve("Hello World");
@@ -81,7 +77,7 @@ async function showAvatar() {
   document.body.append(img);
 
   // wait 3 seconds
-  await new Promise((resolve, reject) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   img.remove();
 

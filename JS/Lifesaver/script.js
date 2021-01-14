@@ -56,13 +56,31 @@ const [first, second, third, fourth] = [10, 30, 23, 534, 23];
 
 const numbers = [1, 3, 5, 2, 534];
 console.log(Math.max(...numbers));
-const user = {
-  id: 1,
-  name: "John",
+// const user = {
+//   id: 1,
+//   name: "John",
+// };
+//const user1 = { ...user, email: "jetmorgan.jm@gmail.com" }; // spread
+//user1;
+
+//Rest params
+const sum = (...args) => {
+  let sum = 0;
+  args.forEach((arg) => (sum += arg));
+  return sum;
 };
-const user1 = { ...user, email: "jetmorgan.jm@gmail.com" }; // spread
-user1;
-user
 
-//Rest operators
+const user = {
+  name: "Ayo",
+  email: "jhrs",
+  address: {
+    street: "okoko",
+    city: "Lagos",
+    state: "kanduna",
+    country: "Dreams",
+  },
+};
 
+const { name, email, address: {city} } = user;
+console.log(name, email, city);
+console.log(sum(1, 3, 4, 9, 10));

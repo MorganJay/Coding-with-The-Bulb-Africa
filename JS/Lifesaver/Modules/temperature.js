@@ -73,12 +73,37 @@
 // };
 
 //Constructor function for temperature conversion
+// ES6 Class now
+class TemperatureConverter {
+  constructor(temperatureValue = 0, initialTemp = "", convertedTemp = "") {
+    this.temp = parseFloat(temperatureValue);
+    this.initialTemp = initialTemp.toLowerCase();
+    this.convertedTemp = convertedTemp.toLowerCase();
+  }
+  convert() {
+    let result = 0;
+    // check if both units are the same
+    if (this.initialTemp === this.convertedTemp) return `${this.temp}\u00B0${this.initialTemp.toUpperCase()}`;
+    if (this.initialTemp && this.convertedTemp) {
+      switch (typeof this.temp) {
+        case "number":
+          // celsius to fahrenheit
+          if (this.initialTemp == "c" && this.convertedTemp == "f") {
+            result = this.temp * (9 / 5) + 32;
+            return `${this.temp}\u00B0C equals ${result.toFixed(2)}\u00B0F`;
+          }
+          // fahrenheit to celsius
+          if (this.initialTemp == "f" && this.convertedTemp == "c") {
+            result = (this.temp - 32) * (5 / 9);
+            return `${this.temp}\u00B0F equals ${result.toFixed(2)}\u00B0C`;
+          }
+          break;
 
-function TemperatureConverter(temperatureValue = 0, initialTemp = "", convertedTemp = ""){
-  this.temp = parseFloat(temperatureValue);
-  this.initialTemp = initialTemp.toLowerCase();
-  this.convertedTemp = convertedTemp.toLowerCase();
-  this.ToCelsius = function(){
-
-  };
+        default:
+          return "Temperature has not been set";
+      }
+    } else return "Temperature conversion units not set";
+  }
 }
+ 
+export default TemperatureConverter;
