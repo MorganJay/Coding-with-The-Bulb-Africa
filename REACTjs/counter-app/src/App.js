@@ -12,9 +12,19 @@ class App extends Component {
       { id: 4, value: 0 },
     ],
   };
+  //! when the component mounts
+  constructor(){
+    super();
+    console.log("App - constructor");
+  }
+  //! after the component is in the DOM
+  componentDidMount(){
+    //AJAX Call
+    console.log("App mounted");
+  }
 
   handleIncrement = (counter) => {
-    const counters = [...this.state.counters];
+    const counters = [...this.state.counters]; // create copies
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++;
@@ -37,6 +47,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App rendered");
     return (
       <React.Fragment>
         <NavBar
