@@ -50,7 +50,7 @@ const uno = () => {
 // };
 
 const dos = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => resolve("I am Two"), 2000);
   });
 }; 

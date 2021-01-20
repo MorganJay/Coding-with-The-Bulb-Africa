@@ -21,7 +21,7 @@ function lastToFirst(string) {
 console.log(lastToFirst(word));
 
 function textToPigLatin(string) {
-  const consonantClusters = ["bl", "br", "by", "cl", "cr", "cy", "ch", ""];
+  const consonantClusters = ["bl", "br", "by", "cl", "cr", "cy", "ch", "gl"];
   const stringArray = string.toLowerCase().split(" ");
   const newStringArray = [];
   stringArray.forEach((string) => {
