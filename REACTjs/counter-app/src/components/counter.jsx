@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 class Counter extends Component {
   // UPdating phase
   componentDidUpdate(previousProps, previousState) {
