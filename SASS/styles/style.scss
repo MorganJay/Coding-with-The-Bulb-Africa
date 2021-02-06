@@ -1,0 +1,13 @@
+@import './variables';
+@import './header';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contact {
+  @extend header;
+  background: chocolate;
+  width: 100% - 20%;
+}

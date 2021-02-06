@@ -1,0 +1,33 @@
+header, .contact {
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: blue;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+header button, .contact button {
+  background: #38928e;
+}
+
+header button:hover, .contact button:hover {
+  background: red;
+}
+
+header button::after, .contact button::after {
+  content: '';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contact {
+  background: chocolate;
+  width: 80%;
+}

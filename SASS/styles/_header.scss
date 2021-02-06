@@ -1,0 +1,14 @@
+header {
+  @include flexCenter(column, blue);
+  justify-content: center;
+  align-items: center;
+  button {
+    background: $primaryButton;
+    &:hover {
+      background: red;
+    }
+    &::after {
+      content: '';
+    }
+  }
+}

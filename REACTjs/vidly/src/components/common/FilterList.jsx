@@ -16,8 +16,8 @@ const FilterList = props => {
           onClick={() => onItemSelect(item)}
           className={
             item === selectedItem
-              ? 'list-group-item list-group-item-action active'
-              : 'list-group-item list-group-item-action'
+              ? 'list-group-item list-group-item-action active font-weight-bold'
+              : 'list-group-item list-group-item-action font-weight-bold'
           }
           key={item[valueProperty]}
         >
