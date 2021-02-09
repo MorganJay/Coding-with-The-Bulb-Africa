@@ -38,7 +38,7 @@ const users = {
   },
   John: {
     email: 'john@john.com',
-    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node'],
     age: 20,
     isLoggedIn: true,
     points: 50,
@@ -91,40 +91,30 @@ const highestUser = userEntries.filter(
 // TODO: Access userEntries with destructured name variable
 //console.log(`${highestUser[0][0]} has the highest skills.`); //* first try
 
-let skills = 0;
-let highlySkilledUser = '';
+let numberOfSkills = 0;
+let highlySkilledUser;
 let onlineUsers = 0;
 let eliteUsers = 0;
+const mern = ['MongoDB', 'Express', 'React', 'Node'];
+let mernStack = new Set();
+
 for (const user in users) {
-  let userProps = users[user];
-  let skillsLength = userProps.skills.length;
-  skills = skillsLength > skills ? skillsLength : skills;
-  highlySkilledUser =
-    userProps.skills.length === skills ? user : highlySkilledUser;
-  onlineUsers += userProps.isLoggedIn ? 1 : 0;
-  eliteUsers += userProps.points >= 50 ? 1 : 0;
+  const { skills, isLoggedIn, points } = users[user];
+  numberOfSkills = skills.length > numberOfSkills ? skills.length : numberOfSkills;
+  highlySkilledUser = skills.length === numberOfSkills ? user : highlySkilledUser;
+  onlineUsers += isLoggedIn ? 1 : 0;
+  eliteUsers += points >= 50 ? 1 : 0;
+  mern.every(skill =>
+    skills.includes(`${skill}`) ? mernStack.add(user) : null
+  );
 }
 
+console.log(mernStack);
+
+// mernUsers.splice(mernUsers.indexOf(user), 1);
 console.log(
-  `${highlySkilledUser} has the highest skills with a massive ${skills} skills 😳.`
+  `${highlySkilledUser} has the highest skills with a massive ${numberOfSkills} skills 😳.`
 );
 console.log(
   `There are ${onlineUsers} users online and ${eliteUsers} users with at least 50 points.`
 );
-
-// const userValues = Object.values(users);
-// const logCount = userValues.reduce(
-//   (acc, user) => (acc += user.isLoggedIn ? 1 : 0),
-//   0
-// );
-// console.log(logCount);
-
-// const bestUsers = userValues.reduce(
-//   (acc, user) => (acc += user.points >= 50 ? 1 : 0),
-//   0
-// );
-
-// console.log(bestUsers);
-
-//   if (user.isLoggedIn) acc++;
-//   return acc;
